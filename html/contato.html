@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/contato.css">
+    <title>Contato</title>
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#goals">Metas</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+    </header>
+
+    <div class="container">
+        <div class="container-contato">
+        <div class="left">
+            <div class="social">
+                <h2>Minhas Redes Sociais</h2>
+             <div class="container-media">
+            <div class="container-media-1"> 
+                <a href="#"><img class="image-vetor" src="/imagens vetor/vetor contato/social.png" alt=""><div class="instagram-text"> Instagram</div></a>
+                <a href="#"><img class="image-vetor" src="/imagens vetor/vetor contato/linkedin.png" alt=""><div class="linkedin-text">LinkedIn</div></a></div>
+            <div class="container-media-2">
+                    <a href="#"><img class="image-vetor" src="/imagens vetor/vetor contato/github.png" alt=""><div class="github-text">GitHub</div></a>
+                <a href="#"><img class="image-vetor" src="/imagens vetor/vetor contato/whatsapp.png" alt=""><div class="whatsapp-text">whatsapp</div></a>
+            </div>
+
+             </div>
+            </div>
+            <div class="right">
+                <img class="image-perfil" src="/Imagens/Gabriel Contato.png" alt="Minha Foto">
+            </div>
+         </div>
+        </div>
+            <div class="email-form">
+                <form>
+                    
+                    <div class="form-position">
+                        <label for="nome">Nome:</label>
+                    <input type="text" placeholder="Seu Nome" required>
+                        <label for="nome">Seu E-mail:</label>
+                    <input type="email" placeholder="Seu E-mail" required></div>
+                        
+                    <div class="form-position">
+                        <label for="nome">Sua Mensagem:</label>
+                        <textarea placeholder="Sua mensagem" rows="6" required></textarea>
+                    <button type="submit">Enviar</button></div>
+                </form>
+            </div>
+    </div>
+
+    <script> 
+    document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header h1");
+        let text = header.innerText;
+        header.innerText = "";
+        
+        text.split("").forEach((letter, index) => {
+            setTimeout(() => {
+                header.innerText += letter;
+            }, index * 100);
+        });
+    
+        // Menu responsivo
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navList = document.querySelector(".nav-list");
+        
+        menuToggle.addEventListener("click", () => {
+            navList.classList.toggle("active");
+        });
+    });
+    </script>
+</body>
+</html>

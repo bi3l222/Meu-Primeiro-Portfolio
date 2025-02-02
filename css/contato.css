@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #121212;
+    color: white;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.container-contato {
+    display: flex;
+}
+
+.container-media-1 {
+    margin-right: 70px;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.social {
+    margin-right: 20px;
+}
+
+.social a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 40px 40px 40px 0;
+}
+
+.container-media {
+    display: flex;
+    width: 100%;
+    max-width: 20rem;
+}
+
+.instagram-text, 
+.linkedin-text, 
+.github-text, 
+.whatsapp-text {
+    font-size: 20px;
+    text-align: center;
+} 
+
+.instagram-text {
+    color: rgb(190, 13, 131);
+}
+
+.linkedin-text {
+    color: rgb(59, 129, 194);
+}
+
+.github-text {
+    color: rgb(75, 75, 165);
+}
+
+.whatsapp-text {
+    color: rgb(66, 105, 8);
+}
+
+.image-perfil {
+   width: 100%;
+   max-width: 25rem;
+   border-radius: 30px;
+   min-width: 13rem;
+}
+
+.image-vetor {
+    width: 100%;
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.email-form {
+    width: 100vw;
+}
+
+.email-form form {
+    display: flex;
+    justify-content: center;
+}
+
+.form-position {
+    width: 100%;
+    max-width: 30rem;
+    margin-right: 10px;
+}
+
+.email-form input {
+    height: 40px;
+}
+
+
+.email-form input, .email-form textarea {
+    width: 100%;
+    max-width: 30rem;
+    padding: 10px;
+    margin: 6px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.email-form button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.photo {
+    max-width: 150px;
+    border-radius: 10px;
+}
+.right {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-position {
+        margin-right: 0;
+    }
+
+    .email-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .email-form form {
+        flex-direction: column;
+        width: 90%;   
+    }
+
+    .email-form input, .email-form textarea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-media {
+      display: flex;
+      flex-direction: column;
+     }
+
+     .social a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin: 40px 40px 0px 40px;
+    }
+}
+

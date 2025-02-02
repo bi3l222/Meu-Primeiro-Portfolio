@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#goals">Metas</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+    </header>
+
+    <section id="home" class="hidden">
+        <div class="home">
+            <div class="profile">
+                <img src="/Imagens/Foto de Perfil.jpg" alt="Foto de perfil" class="profile-img">
+                <h1 class="text-home">Gabriel Romão</h1>
+                <h2 class="text-home-2">Desenvolvedor Web</h2>
+            </div>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" class="social-link"><img class="imagens-vetor" src="/imagens vetor/whatsapp.png" alt=""></a>
+                <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" class="social-link"><img class="imagens-vetor" src="/imagens vetor/linkedin.png" alt=""></a>
+                <a href="https://github.com/seugithub" target="_blank" class="social-link"><img class="imagens-vetor" src="/imagens vetor/github.png" alt=""></a>
+                <a href="https://www.instagram.com/seuinsta" target="_blank" class="social-link"><img class="imagens-vetor" src="/imagens vetor/instagram.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about background hidden">
+        <h2>Sobre Mim</h2>
+        <p>Eu sou um entusiasta da tecnologia desde pequeno, sempre curioso e apaixonado por explorar o mundo dos computadores...</p>
+    </section>
+    
+    <section id="goals" class="goals background hidden">
+        <h2>Minhas Metas</h2>
+        <ul>
+            <li>Meta 1: Minha meta profissional <span class="toggle-text">+</span>
+                <div class="hidden-text">
+                <p>Quero me tornar um profissional cada vez mais versátil na área de tecnologia. Sempre gostei de mexer com hardware, software e desenvolvimento, então minha meta é continuar aprendendo e me aprofundando nessas áreas.</p>
+
+                <p>Também quero explorar novas tecnologias, como inteligência artificial e automação, para criar soluções que realmente façam a diferença.</p>
+                    
+                <p>Além disso, quero melhorar minhas habilidades de trabalho em equipe e liderança, porque acredito que grandes projetos só acontecem quando as pessoas colaboram de verdade.</p>
+                </div>
+            </li>
+            <li>Meta 2: Descrever uma meta de aprendizado <span class="toggle-text">+</span>
+                <p class="hidden-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+            <li>Meta 3: Outra meta relevante <span class="toggle-text">+</span>
+                <p class="hidden-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="projects" class="projects background hidden">
+        <h2>Projetos</h2>
+        <div class="projeto-card">
+            <a href="https://www.portoconsulting.com.br" target="_blank">
+                <img src="/Imagens/page projetos.png" alt="Porto Consulting" class="projeto-img">
+                <p class="project-description">Desenvolvimento de site para corretora...</p>
+            </a>
+        </div>
+    </section>
+
+    <div id="chatbot">
+        <div id="chatbox">
+            <p class="botText"><span>Olá! Como posso te ajudar?</span></p>
+        </div>
+        <input id="userInput" type="text" placeholder="Digite sua pergunta..." />
+        <button onclick="getResponse()">Enviar</button>
+    </div>
+    
+    <section id="contact" class="contact background hidden">
+        <h2>Contato</h2>
+        <p>Inclua seu email, LinkedIn, GitHub ou outras formas de contato.</p>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header h1");
+        let text = header.innerText;
+        header.innerText = "";
+        
+        text.split("").forEach((letter, index) => {
+            setTimeout(() => {
+                header.innerText += letter;
+            }, index * 100);
+        });
+    
+        // Menu responsivo
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navList = document.querySelector(".nav-list");
+        
+        menuToggle.addEventListener("click", () => {
+            navList.classList.toggle("active");
+        });
+    
+        // Expandir e recolher metas com animação
+        document.querySelectorAll(".toggle-text").forEach(button => {
+            button.addEventListener("click", (event) => {
+                event.stopPropagation(); // Evita que o clique no botão afete outros elementos
+                const text = button.parentElement.querySelector(".hidden-text");
+                
+                if (text.style.display === "none" || text.style.display === "") {
+                    text.style.display = "block";
+                    text.style.opacity = "0";
+                    setTimeout(() => {
+                        text.style.opacity = "1";
+                        text.style.transition = "opacity 0.3s ease-in-out";
+                    }, 10);
+                    button.innerText = " -";
+                    button.style.transform = "rotate(180deg)";
+                    button.style.transition = "transform 0.3s ease";
+                } else {
+                    text.style.opacity = "0";
+                    setTimeout(() => {
+                        text.style.display = "none";
+                    }, 300);
+                    button.innerText = " +";
+                    button.style.transform = "rotate(0deg)";
+                }
+            });
+        });
+    });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    function revealOnScroll() {
+        const elements = document.querySelectorAll(".hidden");
+        elements.forEach((el) => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 100;
+
+            if (elementTop < windowHeight - elementVisible) {
+                el.classList.add("show");
+            } else {
+                el.classList.remove("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Para garantir que os elementos que já estão visíveis apareçam imediatamente
+});
+
+function getResponse() {
+    let userInput = document.getElementById("userInput").value.toLowerCase();
+    let chatbox = document.getElementById("chatbox");
+
+    let responses = {
+        "olá": "Olá! Como posso te ajudar?",
+        "como funciona o site?": "Este é meu portfólio! Aqui você encontra informações sobre meus projetos.",
+        "quais tecnologias você usa?": "HTML, CSS, JavaScript e mais!",
+        "adeus": "Até mais! 😊"
+    };
+
+    let botReply = responses[userInput] || "Desculpe, não entendi. Pode reformular a pergunta?";
+
+    chatbox.innerHTML += `<p class="userText"><span>${userInput}</span></p>`;
+    chatbox.innerHTML += `<p class="botText"><span>${botReply}</span></p>`;
+
+    document.getElementById("userInput").value = "";
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+    </script>
+</body>
+</html>
